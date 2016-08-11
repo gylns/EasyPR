@@ -1,5 +1,6 @@
 #include "easypr/util/kv.h"
 #include "easypr/util/util.h"
+#include <iostream>
 
 namespace easypr {
 
@@ -9,6 +10,11 @@ void Kv::load(const std::string &file) {
   this->clear();
 
   std::ifstream reader(file);
+  if (!reader)
+  {
+      std::cerr << "cannot open file: " << file << std::endl;
+      return;
+  }
   while (!reader.eof()) {
     std::string line;
     std::getline(reader, line);

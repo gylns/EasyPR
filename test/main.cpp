@@ -4,6 +4,7 @@
 #include "accuracy.hpp"
 #include "chars.hpp"
 #include "plate.hpp"
+#include <limits>
 
 // %OPENCV%\x86\vc12\lib opencv_world300d.lib;
 
@@ -406,6 +407,8 @@ int main(int argc, const char* argv[]) {
           break;
         default:
           std::cout << kv->get("input_error") << ":";
+          std::cin.clear();
+          std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
           isRepeat = true;
           break;
       }

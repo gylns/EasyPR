@@ -53,6 +53,8 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
   set(EXECUTABLE_NAME "demo_darwin_amd64")
 elseif (CMAKE_SYSTEM_NAME MATCHES "Linux")
   set(EXECUTABLE_NAME "demo_linux_amd64")
+else()
+  set(EXECUTABLE_NAME "demo")
 endif ()
 
 # test cases
